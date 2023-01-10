@@ -7,7 +7,7 @@ For when you're sick of normal jokes... Powered by ChatGPT3 https://openai.com/b
 
 # Inputs
 st.header('Inputs: ')
-is_dev = st.radio('Dev mode', options=['dev', 'prod'], index=0, key='is_dev')
+is_dev = st.radio('Dev mode', options=['dev', 'prod'], index=1, key='is_dev')
 api_key = st.text_input('Enter your API_KEY here:', max_chars=100, key="api_key")
 prompt = st.text_input('Enter your prompt here:', max_chars=100)
 
