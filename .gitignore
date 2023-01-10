@@ -127,3 +127,8 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# Data
+anti_jokes_clean.csv
+*.jsonl
+source.txt
