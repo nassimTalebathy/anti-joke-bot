@@ -4,6 +4,7 @@ import openai
 PROMPT_TEXT = '\n\n###\n\n'
 END_TEXT = '###'
 FINE_TUNED_MODEL_NAME = 'davinci:ft-naked-2023-01-10-10-44-16'
+MAX_PROMPT_CHARS = 200
 
 
 def prep_question(q: str):
@@ -29,7 +30,7 @@ def process_answer(a: str):
 def validate_input(prompt: str, api_key: str, temperature: float, max_tokens: int, mode: str):
     assert isinstance(prompt, str), "Prompt must be a str"
     assert prompt.strip() not in [' ', ''], "prompt.strip() not in [' ', '']"
-    assert 4 <= len(prompt) <= 100, "4 <= len(prompt) <= 100"
+    assert 4 <= len(prompt) <= MAX_PROMPT_CHARS, f"4 <= len(prompt) <= {MAX_PROMPT_CHARS}"
     assert isinstance(api_key, str), "api_key must be a str"
     assert api_key.strip() not in [' ', ''], "api_key.strip() not in [' ', '']"
     assert 30 <= len(api_key) <= 100, "30 <= len(api_key) <= 100"
